@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleWatchlist, selectIsInWatchlist } from "../../store/watchlistSlice";
+import {
+  toggleWatchlist,
+  selectIsInWatchlist,
+} from "../../store/watchlistSlice";
 import toast from "react-hot-toast";
 import tmdbClient from "../../services/tmdbClient";
 import Loader from "../Loader/Loader";
@@ -28,7 +31,9 @@ export default function MovieDetails() {
   });
 
   const dispatch = useDispatch();
-  const isInWatchlist = useSelector(selectIsInWatchlist(id ? Number(id) : null));
+  const isInWatchlist = useSelector(
+    selectIsInWatchlist(id ? Number(id) : null),
+  );
 
   const handleToggleWatchlist = () => {
     if (!movie) return;
@@ -163,7 +168,9 @@ export default function MovieDetails() {
                 onClick={handleToggleWatchlist}
                 className="px-6 py-3 rounded-lg border border-white/30 text-white bg-transparent hover:bg-white/10 transition flex items-center gap-2"
               >
-                <i className={`bi ${isInWatchlist ? "bi-bookmark-check-fill" : "bi-bookmark-plus"}`}></i>
+                <i
+                  className={`bi ${isInWatchlist ? "bi-bookmark-check-fill" : "bi-bookmark-plus"}`}
+                ></i>
                 {isInWatchlist ? "In Watchlist" : "Add Watchlist"}
               </button>
             </div>

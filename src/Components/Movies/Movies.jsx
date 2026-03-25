@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import tmdbClient from "../../services/tmdbClient";
+import tmdbClient from "../../services/tmdbClient.js";
 import MoviesGrid from "./MoviesGrid";
 import Loader from "../Loader/Loader";
 
@@ -17,7 +17,7 @@ export default function Movies() {
     queryKey: ["movies", category, page],
     queryFn: async () => {
       const res = await tmdbClient.get(`/movie/${category}`, {
-        params: { page }, 
+        params: { page },
       });
       return res.data;
     },
@@ -26,7 +26,6 @@ export default function Movies() {
 
   const movies = data?.results ?? [];
   const totalPages = data?.total_pages ?? 1;
-
 
   const safeTotal = Math.min(totalPages, 500); // TMDB max 500
   const start = Math.max(1, page - 3);

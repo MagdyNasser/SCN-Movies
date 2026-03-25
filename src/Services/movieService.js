@@ -1,11 +1,13 @@
-import tmdbClient from "./tmdbClient";
+import tmdbClient from "./tmdbClient.js";
 
 export const getTrendingMovies = async () => {
   const { data } = await tmdbClient.get("/trending/movie/day");
-  return data; 
+  return data;
 };
 
-{/* Popular Movies */ }
+{
+  /* Popular Movies */
+}
 export const getPopularMovies = async ({ page = 1 } = {}) => {
   const { data } = await tmdbClient.get("/movie/popular", {
     params: { page },
@@ -13,7 +15,9 @@ export const getPopularMovies = async ({ page = 1 } = {}) => {
   return data;
 };
 
-{ /* Top Rated */ }
+{
+  /* Top Rated */
+}
 
 export const getTopRatedMovies = async ({ page = 1 } = {}) => {
   const { data } = await tmdbClient.get("/movie/top_rated", {
@@ -22,14 +26,18 @@ export const getTopRatedMovies = async ({ page = 1 } = {}) => {
   return data;
 };
 
-{ /*Genres list*/ }
+{
+  /*Genres list*/
+}
 
 export const getMovieGenres = async () => {
   const { data } = await tmdbClient.get("/genre/movie/list");
   return data; // { genres: [{id, name}, ...] }
 };
 
-{ /*  Discover by genre */ }
+{
+  /*  Discover by genre */
+}
 
 export const discoverMoviesByGenre = async ({ genreId, page = 1 } = {}) => {
   const { data } = await tmdbClient.get("/discover/movie", {
@@ -43,7 +51,9 @@ export const discoverMoviesByGenre = async ({ genreId, page = 1 } = {}) => {
   return data; // { results, page, total_pages... }
 };
 
-{ /* Now Playing */ }
+{
+  /* Now Playing */
+}
 
 export const getNowPlayingMovies = async ({ page = 1 } = {}) => {
   const { data } = await tmdbClient.get("/movie/now_playing", {
@@ -52,16 +62,20 @@ export const getNowPlayingMovies = async ({ page = 1 } = {}) => {
   return data;
 };
 
-{ /* Upcoming */ }
+{
+  /* Upcoming */
+}
 
-export const getUpcomingMovies  = async ({ page = 1 } = {}) => {
+export const getUpcomingMovies = async ({ page = 1 } = {}) => {
   const { data } = await tmdbClient.get("/movie/upcoming", {
     params: { page },
   });
   return data;
 };
 
-{ /* discover Movies */ }
+{
+  /* discover Movies */
+}
 export const discoverMovies = async ({
   page = 1,
   genre,
@@ -80,7 +94,9 @@ export const discoverMovies = async ({
   return data;
 };
 
-{ /*Search Movies */ }
+{
+  /*Search Movies */
+}
 export const searchMovies = async ({ query, page = 1 } = {}) => {
   if (!query?.trim()) {
     return { page: 1, results: [], total_pages: 0, total_results: 0 };
