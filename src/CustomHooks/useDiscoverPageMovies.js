@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { discoverMovies } from "../Services/movieService";
+import { discoverMovies } from "../services/movieService";
 
 export function useDiscoverPageMovies(filters) {
   return useQuery({

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getTrendingMovies } from "../Services/movieService";
+import { getTrendingMovies } from "../services/movieService";
 
 export function useTrendingMovies() {
     return useQuery({

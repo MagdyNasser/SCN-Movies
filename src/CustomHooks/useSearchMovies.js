@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { searchMovies } from "../Services/movieService";
+import { searchMovies } from "../services/movieService";
 
 export function useSearchMovies({ query, page = 1 }) {
 

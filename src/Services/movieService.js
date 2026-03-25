@@ -1,4 +1,4 @@
-import tmdbClient from "./tmdbClient.js";
+import tmdbClient from "./tmdbClient";
 
 export const getTrendingMovies = async () => {
   const { data } = await tmdbClient.get("/trending/movie/day");

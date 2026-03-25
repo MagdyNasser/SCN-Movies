@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMovieGenres } from "../Services/movieService";
+import { getMovieGenres } from "../services/movieService";
 
 export function useMovieGenres() {
   return useQuery({
