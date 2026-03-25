@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import tmdbClient from "../Services/tmdbClient";
+import tmdbClient from "../services/tmdbClient";
 
 export function useTrendingPageMovies({ page = 1, timeWindow = "day" }) {
   return useQuery({

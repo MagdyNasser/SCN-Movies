@@ -17,7 +17,7 @@ export default function Movies() {
     queryKey: ["movies", category, page],
     queryFn: async () => {
       const res = await tmdbClient.get(`/movie/${category}`, {
-        params: { page }, // هنا التغيير
+        params: { page }, 
       });
       return res.data;
     },

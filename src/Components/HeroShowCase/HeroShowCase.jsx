@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import tmdbClient from "../../Services/tmdbClient";
+import tmdbClient from "../../services/tmdbClient";
 import Loader from "../Loader/Loader";
 
 export default function HeroShowcase() {

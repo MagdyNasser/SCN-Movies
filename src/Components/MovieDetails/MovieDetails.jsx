@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleWatchlist, selectIsInWatchlist } from "../../store/watchlistSlice";
 import toast from "react-hot-toast";
-import tmdbClient from "../../Services/tmdbClient";
+import tmdbClient from "../../services/tmdbClient";
 import Loader from "../Loader/Loader";
 
 const backdropBase = "https://image.tmdb.org/t/p/original";
